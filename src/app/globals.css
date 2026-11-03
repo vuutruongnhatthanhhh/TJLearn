@@ -1,0 +1,76 @@
+@import "tailwindcss";
+
+:root {
+  --color-canvas: #faf9fc;
+  --color-canvas-soft: #f4f1fb;
+  --color-ink: #0a0a0a;
+  --color-ink-soft: #0a0a0a;
+  --color-brand: #6d4cf0;
+  --color-brand-dark: #4f32c4;
+  --color-brand-light: #efe9ff;
+  --color-accent: #ff8a3d;
+  --color-accent-light: #ffe7d1;
+  --color-mint: #16c79a;
+  --color-mint-light: #d7f7ec;
+  --color-pink: #ff5c93;
+  --color-pink-light: #ffe1ec;
+  --color-sun: #ffc93c;
+  --color-card: #ffffff;
+  --color-border: #ece8f7;
+  --shadow-soft: 0 20px 45px -20px rgba(79, 50, 196, 0.25);
+  --shadow-pop: 0 14px 30px -12px rgba(22, 19, 42, 0.18);
+}
+
+@theme inline {
+  --color-canvas: var(--color-canvas);
+  --color-ink: var(--color-ink);
+  --font-sans: var(--font-body);
+  --font-display: var(--font-display);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-body), ui-sans-serif, system-ui, sans-serif;
+}
+
+.font-display {
+  font-family: var(--font-display), ui-sans-serif, system-ui, sans-serif;
+}
+
+::selection {
+  background: var(--color-brand);
+  color: white;
+}
+
+@keyframes blob-float {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  33% { transform: translate(20px, -30px) scale(1.08); }
+  66% { transform: translate(-15px, 15px) scale(0.95); }
+}
+
+.animate-blob {
+  animation: blob-float 14s ease-in-out infinite;
+}
+
+.animate-blob-slow {
+  animation: blob-float 20s ease-in-out infinite;
+}
+
+@keyframes fade-up {
+  from { opacity: 0; transform: translateY(16px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-up {
+  animation: fade-up 0.6s ease-out both;
+}
+
+.scrollbar-none::-webkit-scrollbar {
+  display: none;
+}
+.scrollbar-none {
+  scrollbar-width: none;
+}
